@@ -1,4 +1,5 @@
 #Dados los catetos de un triángulo rectángulo, calcular su hipotenusa.
+
 import math
 
 cateto1= int(input("Introduzca la medidida de uno de los catetos: "))

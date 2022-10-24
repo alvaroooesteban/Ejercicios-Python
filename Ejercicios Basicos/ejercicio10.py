@@ -3,3 +3,4 @@
 #•55% del promedio de sus tres calificaciones parciales.
 #•30% de la calificación del examen final.
 #•15% de la calificación de un trabajo final.
+
