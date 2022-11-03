@@ -12,10 +12,14 @@ precioBus=4000
 
 #condiciones:
 if cantidadAlumnos>=100:
-    print("El precio total del bus es de", cantidadAlumnos*65+precioBus , "€") 
-elif cantidadAlumnos>=50 and cantidadAlumnos<=99:
-    print("El precio total del bus es de", cantidadAlumnos*70+precioBus, "€")
-elif cantidadAlumnos>=30 and cantidadAlumnos<=49:
-    print("El precio total del bus es de", cantidadAlumnos*95+precioBus, "€") 
+    print("El precio total del bus es de", cantidadAlumnos*65 , "€") 
+    print("El precio por alumno es de 65€")
+elif (cantidadAlumnos>=50 or cantidadAlumnos<=99):
+    print("El precio total del bus es de", cantidadAlumnos*70, "€")
+    print("El precio por alumno es de 70€")
+elif (cantidadAlumnos>=30 or cantidadAlumnos<=49):
+    print("El precio total del bus es de", cantidadAlumnos*95, "€")
+    print("El precio por alumno es de 95€") 
 elif cantidadAlumnos<30:
     print("El precio total del bus es de", precioBus, "€")
+    print("El precio por alumno es de", precioBus/cantidadAlumnos, "€")

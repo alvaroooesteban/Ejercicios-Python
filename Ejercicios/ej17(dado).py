@@ -24,3 +24,28 @@ elif numeroCaraDados == 6:
     print("La cara opuesta es el uno")
 else:
     print("ERROR: numero incorrecto")
+
+    #Otra forma de hacerlo:
+    numeroCaraDados = int(input("Introduzca el numero de la cara del dado: "))
+    caraOpuesta = ""
+    hayError = False
+#Sacamos la cara opuesta:
+    if numeroCaraDados == 1:
+        caraOpuesta = "seis"   
+    elif numeroCaraDados == 2:
+        caraOpuesta = "cinco"
+    elif numeroCaraDados == 3:
+        caraOpuesta = "cuatro"
+    elif numeroCaraDados == 4:
+        caraOpuesta = "tres"
+    elif numeroCaraDados == 5:
+        caraOpuesta = "dos"
+    elif numeroCaraDados == 6:
+        caraOpuesta = "uno"
+    else:
+        hayError = True
+#salida del programa:
+if not hayError:
+    print("La cara opuesta es : ",  caraOpuesta)
+else:
+    print("ERROR: numero incorrecto")

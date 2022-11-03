@@ -8,9 +8,9 @@ diaSemana = int(input("Introduce el día de la semana: "))
 if diaSemana == 1:
     print("Lunes") 
 elif diaSemana == 2:
-    print("Madtrés")
+    print("Martes")
 elif diaSemana == 3:
-    print("Miercoles")
+    print("Miércoles")
 elif diaSemana == 4:
     print("Jueves")
 elif diaSemana == 5:

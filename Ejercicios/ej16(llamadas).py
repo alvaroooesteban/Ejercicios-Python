@@ -8,7 +8,7 @@
 
 #Definicion de variables:
 tiempoLlamada = int(input("Introduzca el tiempo de la llamada en minutos: "))
-precioLlamada = 1
+precioLlamada = 0
 turno = input("Introduzca el turno de trabajo: ")
 dia = input("Introduzca el dia de la semana: ")
 
@@ -25,9 +25,41 @@ elif (tiempoLlamada>10):
 if (dia=="domingo"):
     print("El precio de la llamada es de", precioLlamada+0.03, "€")
     
-if(dia!="domingo" and turno=="mañana"):
-    print("El precio de la llamada es de", precioLlamada+0.15, "€")
+if(dia!="domingo"):  
+        if turno=="mañana":
+                print("El precio de la llamada es de", precioLlamada+0.15, "€")
 elif (turno=="tarde"):
         print("El precio de la llamada es de", precioLlamada+0.10, "€")
 
         ##Error
+
+        #Correcciones:
+        #Definicion de variables:
+tiempoLlamada = int(input("Introduzca el tiempo de la llamada en minutos: "))
+precioLlamada = 0
+turno = input("Introduzca el turno de trabajo: (M,T)")
+dia = input("Introduzca el dia de la semana:(L,M,X,J,V,S,D) ")
+
+#precioLlamada
+
+precioLlamada=1
+if tiempoLlamada >= 6:
+        precioLlamada= precioLlamada+ 0.80
+if tiempoLlamada >= 8:
+        precioLlamada+= 0.70
+if tiempoLlamada>10:
+        precioLlamada+= 0.50
+
+#impuesto por dia
+impuestoporDia=0
+if dia=="D":
+        impuestoporDia=0.03
+else:
+        if turno=="M":
+                impuestoporDia=0.15
+        elif turno=="T":
+                impuestoporDia=0.10
+
+precioLlamada=precioLlamada * (1+impuestoporDia)
+
+print("El precio de la llamada es de", precioLlamada, "€")

@@ -36,4 +36,15 @@ else:
     print("Error, solo hay 5 zonas de destino")
 
     #Error
+
+
+    #Correcciones:
+pesoPaquete = float(input("Ingrese el peso del paquete: "))
+zonaDestino = int(input("Ingrese la zona de destino: "))
+precioEnvio = 0
+precioKilo = 0
+hayError = False
+
+if pesoPaquete < 5:
+    hayError = True
     

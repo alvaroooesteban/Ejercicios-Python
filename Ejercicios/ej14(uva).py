@@ -17,13 +17,26 @@ sizeUva=int(input("Introduzca el tamaño de la uva: "))
 if (tipoUva=="A" and sizeUva==1):
         print(cantidad*precioInicial+0.20, "€")
 
-elif sizeUva==2:
+elif  sizeUva==2:
         print((cantidad*precioInicial+0.30), "€")
 
-if (tipoUva=="B" and sizeUva==1):
+elif (tipoUva=="B" and sizeUva==1):
      print(cantidad*precioInicial-0.30, "€")
-elif sizeUva==2:
+elif  sizeUva==2:
      print((cantidad*precioInicial-0.50), "€")
 
 
      ##Error en el tipo 2
+     #Correccciones:
+     if tipoUva=="A":
+        if sizeUva==1:
+            print(cantidad*precioInicial+0.20, "€")
+        elif sizeUva==2:
+            print((cantidad*precioInicial+0.30), "€")
+        elif tipoUva=="B":
+                if sizeUva==1:
+                        print(cantidad*precioInicial-0.30, "€")
+                elif sizeUva==2:
+                        print((cantidad*precioInicial-0.50), "€")
+                else:
+                        print("Error en el tamaño")
