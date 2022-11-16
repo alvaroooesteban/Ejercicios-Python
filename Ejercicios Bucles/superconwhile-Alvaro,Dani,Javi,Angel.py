@@ -1,25 +1,18 @@
 #Ejercicio hecho entre Dani,Javi,Angel y Alvaro
 #No funciona lo del domingo, por eso no esta el if diaSemana!="domingo"...
+#Corregir lo de que no te vuelva a preguntar el dia y el nombre a la hora de comprar otro producto 
 #supermercado
 opciones = 0
-#precioLeche = 1.5
-#precioPan = 0.5
-#precioHuevos = 0.3
-#precioCarne = 2.5
-#precioPescado = 3.5
+
 
 diaSemana = 0
 nombreCliente=""
-#descuentos por nombre
-#nombreInes= 0.9
-#nombreCarlos= 0.9
-#nombreSrmuro=1.5
 
 
 #Entrada de datos
 precioTotal=0
-
-
+print("Bienvenido al supermercado.")
+print("Nuestras opciones son:")
 while opciones != 4:
     print("1. Comprar")
     print("2. Ver Productos")
@@ -30,8 +23,8 @@ while opciones != 4:
     if opciones == 1:
 
         print("Comprar")
-        diaSemana = input("¿Que dia es hoy?")
-        nombreCliente = input("¿Cual es su nombre?")
+        diaSemana = input("¿Que dia es hoy? ")
+        nombreCliente = input("¿Cual es su nombre? ")
         producto=input("Selecciona producto: ")
         cantidadProducto=int(input("Cantidad: "))
    #precios
