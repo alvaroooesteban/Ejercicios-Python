@@ -16,14 +16,14 @@ while respuesta != "no":
     cantidadDinero= int(input("Introduzca la cantidad de dinero que tiene: "))
     while cantidadDinero > 0:
         jugando= True
-        apuesta = int(input("¿Qué cantidad de dinero desea aposter? "))
+        apuesta = int(input("¿Qué cantidad de dinero desea apostar? "))
         if (apuesta <= cantidadDinero):
                 print("Apuesta aceptada")
                 jugando = True
                 while jugando:
                     numeroIntentos += 1
                     if numeroIntentos <=10: 
-                        eleccion = int(input("Dime un numero: "))
+                        eleccion = int(input("Introduzca un numero: "))
                         if eleccion == numeroAleatorio:
                             cantidadDinero += apuesta
                             print("Has ACERTADO, tienes "+str(cantidadDinero)+"€")
@@ -48,6 +48,9 @@ while respuesta != "no":
                         cantidadDinero -= apuesta
                         print("Has FALLADO, tienes "+str(cantidadDinero)+"€")
                         numeroIntentos=0
+                        if cantidadDinero <= 0:
+                            print("No tienes dinero para seguir jugando, hasta la próxima")
+                            exit()
                         respuesta=input("¿Quieres seguir jugando? (si/no) ")
                         if respuesta == "si":
                             quererJugar = True  
@@ -60,6 +63,13 @@ while respuesta != "no":
         elif (apuesta > cantidadDinero):
                 print("Apuesta denegada, no tines suficiente dinero")
                 jugando = False
+        elif (apuesta == 0):
+                print("Apuesta denegada, no puedes apostar 0")
+                jugando = False
+                exit()
+    if cantidadDinero <= 0:
+        print("No tienes dinero para jugar, hasta la próxima")
+        exit()                
 
 print("Esperemos que vuelvas pronto")
 
