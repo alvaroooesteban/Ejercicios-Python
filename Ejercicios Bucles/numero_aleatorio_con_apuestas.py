@@ -32,7 +32,7 @@ while respuesta != "no":
                             respuesta=input("¿Quieres seguir jugando? (si/no) ")
                             if respuesta == "si":
                                         quererJugar = True  
-                                        input("cuanto dinero quieres apostar?")
+                                        input("¿Cuanto dinero quieres apostar?")
                         
                             elif respuesta == "no":
                                 quererJugar = False
@@ -47,9 +47,16 @@ while respuesta != "no":
                     else:
                         cantidadDinero -= apuesta
                         print("Has FALLADO, tienes "+str(cantidadDinero)+"€")
-                        jugando = True
-                        print("Desea volver a jugar (si/no)? ")
-                        respuesta = input("Introduzca su respuesta: ")
+                        numeroIntentos=0
+                        respuesta=input("¿Quieres seguir jugando? (si/no) ")
+                        if respuesta == "si":
+                            quererJugar = True  
+                            input("¿Cuanto dinero quieres apostar?")
+                        elif respuesta == "no":
+                                quererJugar = False
+                                print("Gracias por jugar, hasta la próxima")
+                                exit()
+                        
         elif (apuesta > cantidadDinero):
                 print("Apuesta denegada, no tines suficiente dinero")
                 jugando = False
