@@ -3,10 +3,16 @@
 #Corregir lo de que no te vuelva a preguntar el dia y el nombre a la hora de comprar otro producto 
 #supermercado
 opciones = 0
-
+precioLeche=1.5
+precioPan=0.5
+precioHuevo=0.3
+precioCarne=2.5
+precioPescado=3.5
 
 diaSemana = 0
 nombreCliente=""
+comprar=True
+
 
 
 #Entrada de datos
@@ -20,22 +26,23 @@ while opciones != 4:
     print("4. Salir")
     opciones = int(input("Ingrese una opcion: "))
     if opciones == 1:
-        print("Comprar")
+        print("Comprar:")
         diaSemana = input("¿Que dia es hoy? ")
         nombreCliente = input("¿Cual es su nombre? ")
         producto=input("Selecciona producto: ")
         cantidadProducto=int(input("Cantidad: "))
+        
    #precios
         if (producto == "leche"):
-            precioProducto = 1.5
+            precioProducto = precioLeche
         elif (producto == "pan"):
-            precioProducto = 0.5
+            precioProducto = precioPan
         elif (producto == "huevos"):
-            precioProducto =  0.3
+            precioProducto =  precioHuevo
         elif (producto == "carne"):
-            precioProducto = 2.5
+            precioProducto = precioCarne
         elif (producto == "pescado"):
-            precioProducto = 3.5
+            precioProducto = precioPescado
         else:
             print("El producto no existe")
 
@@ -47,37 +54,49 @@ while opciones != 4:
                 descuento = 1.2
         elif (diaSemana == "miercoles"):
             if (producto == "pan"):
-                descuento = precioProducto
                 cantidadProducto = cantidadProducto // 2 + cantidadProducto % 2
         elif (diaSemana == "viernes"):
                 descuento = 0.3
+        else:
+            descuento = 1
 
 
   #clientes
-        if nombreCliente in ["carlos", "ines"]:
-            if producto in ["leche", "pan", "huevos"]:
+        if nombreCliente =='carlos' or nombreCliente =='ines' and producto=='leche':
                 descuento -= 0.1
         elif (nombreCliente == "SrMuro"):
                     descuento = 1.5
-        precioTotal += precioProducto*cantidadProducto*descuento
-        print('El precio total es {0:.2f}'.format(precioTotal))
+        elif (nombreCliente == "carlos" or nombreCliente == "ines" and producto == "pan"):
+                    descuento = 0.5
+        while comprar==True:
+            precioTotal=(precioProducto*cantidadProducto*descuento)
+            pregunta=input("¿Desea seguir comprando producto? (si/no) ")
+            if pregunta=="si":
+                producto=input("Selecciona producto: ")
+                cantidadProducto=int(input("Cantidad: "))
+                    
+            elif pregunta=="no":
+                precioTotal+=precioTotal
+                print("Gracias por su compra, su precio total es {0:.2f}".format(precioTotal), "€")
+                exit()
+        
 
     elif opciones == 2:
         ListaProductos = ["leche", "pan", "huevos", "carne", "pescado"]
-        print("Lista de productos: ", ListaProductos)
+        print("Nuestros productos: ", ListaProductos)
 
     elif opciones == 3:
-        print("Ofertas")
+        print("Ofertas:")
         print("Lunes=>Leche tiene un 20% de descuento")
         print("Martes=>Dia de los bordelines la factura sube un 20%")
         print("Miercoles=>Hay 2x1 en huevos")
         print("Viernes=>70% de descuento en todo")
 
     elif opciones == 4:
-        print("Adios mostro")
+        print("Adios, esperamos verle pronto")
 
     else:
-        print("Y si pones el número bien friki")
+        print("Ingrese una opcion valida")
         
         
   

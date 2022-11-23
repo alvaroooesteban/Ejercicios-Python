@@ -1,5 +1,4 @@
 #Adivinar un numero aleatorio entre 1 y 100 apostando dinero:
-# sourcery skip: remove-redundant-if, remove-str-from-fstring, use-fstring-for-concatenation
 import random
 numeroAleatorio = random.randint(1, 100)
 numeroIntentos = 0
