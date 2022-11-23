@@ -11,6 +11,6 @@ precio = 10
 for i in range(1, meses + 1):
     print("Mes", i, "pago", precio, "€")
     precio = precio * 2
-
+precioTotal = precio 
 #salida:
-print("Total pagado:", precio / 2)
+print("Total pagado:", precioTotal, "€")

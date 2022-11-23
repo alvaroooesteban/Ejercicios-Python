@@ -19,9 +19,7 @@ while opciones != 4:
     print("3. Ver Ofertas")
     print("4. Salir")
     opciones = int(input("Ingrese una opcion: "))
-    
     if opciones == 1:
-
         print("Comprar")
         diaSemana = input("¿Que dia es hoy? ")
         nombreCliente = input("¿Cual es su nombre? ")
@@ -53,12 +51,12 @@ while opciones != 4:
                 cantidadProducto = cantidadProducto // 2 + cantidadProducto % 2
         elif (diaSemana == "viernes"):
                 descuento = 0.3
-        
+
 
   #clientes
-        if (nombreCliente == "carlos") or (nombreCliente == "ines"):
-                if (producto=="leche") or (producto=="pan") or (producto=="huevos"):
-                    descuento -= 0.1
+        if nombreCliente in ["carlos", "ines"]:
+            if producto in ["leche", "pan", "huevos"]:
+                descuento -= 0.1
         elif (nombreCliente == "SrMuro"):
                     descuento = 1.5
         precioTotal += precioProducto*cantidadProducto*descuento
@@ -67,7 +65,7 @@ while opciones != 4:
     elif opciones == 2:
         ListaProductos = ["leche", "pan", "huevos", "carne", "pescado"]
         print("Lista de productos: ", ListaProductos)
-    
+
     elif opciones == 3:
         print("Ofertas")
         print("Lunes=>Leche tiene un 20% de descuento")
@@ -76,7 +74,7 @@ while opciones != 4:
         print("Viernes=>70% de descuento en todo")
 
     elif opciones == 4:
-       print("Adios mostro")
+        print("Adios mostro")
 
     else:
         print("Y si pones el número bien friki")

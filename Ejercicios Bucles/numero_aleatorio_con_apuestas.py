@@ -1,4 +1,5 @@
 #Adivinar un numero aleatorio entre 1 y 100 apostando dinero:
+# sourcery skip: remove-redundant-if, remove-str-from-fstring, use-fstring-for-concatenation
 import random
 numeroAleatorio = random.randint(1, 100)
 numeroIntentos = 0
@@ -39,10 +40,10 @@ while respuesta != "no":
                                 print("Gracias por jugar, hasta la próxima")
                                 exit()
                         elif eleccion > numeroAleatorio:
-                            print("El numero es MENOR llevas", numeroIntentos , "intentos")
+                            print("El numero es MENOR, llevas", numeroIntentos , "intentos")
                             jugando = True
                         elif eleccion < numeroAleatorio:
-                                print("El numero es MAYOR llevas", numeroIntentos , "intentos")
+                                print("El numero es MAYOR, llevas", numeroIntentos , "intentos")
                                 jugando = True
                     else:
                         cantidadDinero -= apuesta
