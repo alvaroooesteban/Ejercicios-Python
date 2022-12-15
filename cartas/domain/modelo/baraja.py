@@ -1,4 +1,4 @@
-from domain.modelo.Carta import Carta
+from domain.modelo.carta import Carta
 
 
 class Baraja:

@@ -1,7 +1,7 @@
 from random import shuffle
 
 from domain.modelo.baraja import Baraja
-from domain.modelo.Carta import Carta
+from domain.modelo.carta import Carta
 
 class ServiciosCartas:
     def crear_baraja(self):
